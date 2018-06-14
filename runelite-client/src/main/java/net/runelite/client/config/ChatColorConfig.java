@@ -206,7 +206,7 @@ public interface ChatColorConfig extends Config
 	@ConfigItem(
 		position = 50,
 		keyName = "opaqueExamineHighlight",
-		name = "Examine Highlight",
+		name = "Examine highlight",
 		description = "Color of highlights in Examine Text"
 	)
 	default Color opaqueExamineHighlight()
@@ -225,7 +225,7 @@ public interface ChatColorConfig extends Config
 	@ConfigItem(
 		position = 52,
 		keyName = "opaqueFilteredHighlight",
-		name = "Filtered Highlight",
+		name = "Filtered highlight",
 		description = "Color of highlights in Filtered Text"
 	)
 	Color opaqueFilteredHighlight();
@@ -249,7 +249,7 @@ public interface ChatColorConfig extends Config
 	@ConfigItem(
 		position = 55,
 		keyName = "opaqueClanChannelName",
-		name = "Chan channel Name",
+		name = "Clan channel name",
 		description = "Color of Clan Channel Name"
 	)
 	Color opaqueClanChannelName();
@@ -261,6 +261,14 @@ public interface ChatColorConfig extends Config
 		description = "Color of Usernames in Clan Chat"
 	)
 	Color opaqueClanUsernames();
+
+	@ConfigItem(
+		position = 57,
+		keyName = "opaquePublicFriendUsernames",
+		name = "Public friend usernames",
+		description = "Color of Friend Usernames in Public Chat"
+	)
+	Color opaquePublicFriendUsernames();
 
 	@ConfigItem(
 		position = 61,
@@ -435,7 +443,7 @@ public interface ChatColorConfig extends Config
 	@ConfigItem(
 		position = 80,
 		keyName = "transparentExamineHighlight",
-		name = "Examine Highlight (transparent)",
+		name = "Examine highlight (transparent)",
 		description = "Color of highlights in Examine Text (transparent)"
 	)
 	default Color transparentExamineHighlight()
@@ -454,7 +462,7 @@ public interface ChatColorConfig extends Config
 	@ConfigItem(
 		position = 82,
 		keyName = "transparentFilteredHighlight",
-		name = "Filtered Highlight (transparent)",
+		name = "Filtered highlight (transparent)",
 		description = "Color of highlights in Filtered Text (transparent)"
 	)
 	Color transparentFilteredHighlight();
@@ -478,7 +486,7 @@ public interface ChatColorConfig extends Config
 	@ConfigItem(
 		position = 85,
 		keyName = "transparentClanChannelName",
-		name = "Chan channel Name (transparent)",
+		name = "Clan channel name (transparent)",
 		description = "Color of Clan Channel Name (transparent)"
 	)
 	Color transparentClanChannelName();
@@ -490,4 +498,12 @@ public interface ChatColorConfig extends Config
 		description = "Color of Usernames in Clan Chat (transparent)"
 	)
 	Color transparentClanUsernames();
+
+	@ConfigItem(
+		position = 87,
+		keyName = "transparentPublicFriendUsernames",
+		name = "Public friend usernames (transparent)",
+		description = "Color of Friend Usernames in Public Chat (transparent)"
+	)
+	Color transparentPublicFriendUsernames();
 }
