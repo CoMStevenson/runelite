@@ -109,20 +109,21 @@ public class OverlayManager
 	 */
 	public synchronized boolean add(final Overlay overlay)
 	{
-		final boolean add = overlays.add(overlay);
-
-		if (add)
+		if (overlays.contains(overlay))
 		{
-			final Point location = loadOverlayLocation(overlay);
-			overlay.setPreferredLocation(location);
-			final Dimension size = loadOverlaySize(overlay);
-			overlay.setPreferredSize(size);
-			final OverlayPosition position = loadOverlayPosition(overlay);
-			overlay.setPreferredPosition(position);
-			rebuildOverlayLayers();
+			return false;
 		}
 
-		return add;
+		// Add is always true
+		overlays.add(overlay);
+		final Point location = loadOverlayLocation(overlay);
+		overlay.setPreferredLocation(location);
+		final Dimension size = loadOverlaySize(overlay);
+		overlay.setPreferredSize(size);
+		final OverlayPosition position = loadOverlayPosition(overlay);
+		overlay.setPreferredPosition(position);
+		rebuildOverlayLayers();
+		return true;
 	}
 
 	/**
@@ -152,7 +153,12 @@ public class OverlayManager
 	public synchronized boolean removeIf(Predicate<Overlay> filter)
 	{
 		final boolean removeIf = overlays.removeIf(filter);
-		rebuildOverlayLayers();
+
+		if (removeIf)
+		{
+			rebuildOverlayLayers();
+		}
+
 		return removeIf;
 	}
 
